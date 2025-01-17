@@ -1,10 +1,9 @@
 $(()=>{
-
-  _front.init();
-  _aside.init();
-  // setFullPage();
-  // setSlickSlide();
-  // setPartnersSlide();
+  // _front.init();
+  // _aside.init();
+  setFullPage();
+  setSlickSlide();
+  setPartnersSlide();
 
 
   // $('#fullpage').fullpage({
@@ -33,67 +32,79 @@ $(()=>{
 });
 
 
-
-const _aside = {
-  init: function() {
-    _aside.handleClick();
-
-  },
-  open: function() {
-    const asideButton = $("#aside_button");
-    const body = $("body");
-
-    asideButton.addClass("active");
-    body.addClass("aside-open");
-  },
-  close: function() {
-    const asideButton = $("#aside_button");
-    const body = $("body");
-    
-    asideButton.removeClass("active");
-    body.removeClass("aside-open");
-  },
-  handleClick() {
-    const asideButton = $("#aside_button");
-
-    asideButton.off("click").on("click", function(e) {
-      if( asideButton.hasClass("active") ) {
-        _aside.close();
-      } else {
-        _aside.open();
-      }
-    });
-
-    $(".aside-nav li a").on("click", function(e) {
-      e.preventDefault();
-
-      const idx = $(e.target).data('slide');
-      _aside.close();
-      setTimeout(()=> myFullpage.moveTo(idx), 400);
-    })
-  }
+var myFullpage;
+const setFullPage = function() {
+  myFullpage = new fullpage('#fullpage', {
+    anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
+    // slidesNavigation: true, 
+    // navigation: true,
+    scrollBar: true,
+    // responsiveHeight: 500,
+    // responsiveWidth: 1024,  // 너비가 1000일때 수동 원페이지 -> 스크롤
+    // menu: '#menu',
+    afterLoad: function(anchorLink, index){
+      console.log('afterLoad', anchorLink, index);
+    },
+  });
 }
 
 
+var mySlide;
+const setSlickSlide = function() {
+
+  let initialSlide = 0;
+
+  $(".visual-slider").on('init', function(event, slick) {
+    console.log(event, slick)
+    const total = String(slick.slideCount).padStart(2, 0);
+    const current = String(initialSlide + 1).padStart(2, 0);
+    $(".visual-silder-arrows .total").html(total);
+    $(".visual-silder-arrows .current").html(current);
+  })
+
+  mySlide = $('.visual-slider').slick({
+    dots: true,
+    appendDots: $('.visual-slider-dots'),
+    arrows: true,
+    appendArrows: $('.visual-silder-arrows'),
+    initialSlide: initialSlide,
+    autoplay: true,
+    autoplaySpeed: 5000,
+    infinite: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    customPaging: function(slider, i) {
+    	return $(`<button type="button"><span class="blind">${i + 1}</span></button>`);
+    }
+  });
+
+  mySlide.on("afterChange", function(event, slick, currentSlide) {
+    const current = String(currentSlide + 1).padStart(2, 0);
+    $(".visual-silder-arrows .current").html(current);
+  })
+};
 
 
-const _front = {
-  init: function(){
-      _front.vh();
-      _front.handleScrollDown();
-  },
-  vh: function(){
-      const innerHeight = window.innerHeight;
-      document.documentElement.style.setProperty('--vh', `${innerHeight}px`);
-  },
-  handleScrollDown: function() {
-    const scrollDown = $("#scrolldown_button");
 
-    scrollDown.off("click").on("click", function() {
-      myFullpage.moveSectionDown();
-    })
-  }
+var partnersSlide;
+const setPartnersSlide = function() {
+  partnersSlide = $('.partners-slider').slick({
+    dots: false,
+    // appendDots: $('.visual-slider-dots'),
+    arrows: false,
+    // appendArrows: $('.visual-silder-arrows'),
+    // initialSlide: initialSlide,
+    // autoplay: true,
+    // autoplaySpeed: 5000,
+    infinite: false,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    // customPaging: function(slider, i) {
+    // 	return $(`<button type="button"><span class="blind">${i + 1}</span></button>`);
+    // }
+  });
 }
+
 
 
 

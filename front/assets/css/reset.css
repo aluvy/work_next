@@ -37,14 +37,15 @@ body {
   word-break: break-all;
   line-height: 1.437;
   touch-action: pan-x pan-y;
-  background:#fff;
+  background: #fff;
 }
 body,dd,dl,dt,ul,ol,li,p,fieldset,form,input,textarea,select,button,table,legend,th,td,h1,h2,h3,h4,h5,h6 {
-  -webkit-box-sizing:border-box;
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  color:inherit;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: inherit;
+  font-weight: 400;
   /* font-family: 'Pretendard', "Noto Sans KR", 'Malgun Gothic', Dotum, "Apple SD Gothic Neo", sans-serif, Arial, Helvetica, sans-serif; */
   font-family: 'Pretendard', "Apple SD Gothic Neo", sans-serif, Arial, Helvetica, sans-serif;
   letter-spacing: -0.04em;
