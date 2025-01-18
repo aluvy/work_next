@@ -4,14 +4,38 @@ $(()=>{
 
   setMembersSlide();
 
+  getSliderDotsPosition();
+  window.addEventListener('resize', debounce(getSliderDotsPosition, 100));
+
 });
+
+const getSliderDotsPosition = function() {
+  
+  const photo = $(".slick-active .members-slide-inner .photo");
+  const offsetTop = photo.offset().top;
+  const height = photo.height();
+
+  const result = Math.floor(offsetTop + height + 16);
+
+  $(".members-slider-dots").css("top", `${result}px`);
+}
+
+const getInitialSlide = function() {
+  const search = location.search;
+  if( search == '' )  return 0;
+
+  const idx = (search).replace("?idx=", '') * 1;
+  return idx;
+}
 
 
 const setMembersSlide = function() {
 
   let totalCount = 0;
-  let initialSlide = 0;
+  let initialSlide = getInitialSlide();
   let nextSlide = 0;
+
+  console.log('initialSlide', initialSlide);
 
   $(".members-slider").on('init', function(event, slick) {
     totalCount = slick.slideCount;
@@ -34,7 +58,7 @@ const setMembersSlide = function() {
     prevArrow: $('.members-slides-wrap .slide-pagination-area .slide-prev'),
     nextArrow: $('.members-slides-wrap .slide-pagination-area .slide-next'),
     initialSlide: initialSlide,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 5000,
     infinite: true,
     slidesToShow: 1,
@@ -57,5 +81,7 @@ const setMembersSlide = function() {
     
     $(".members-slides-wrap .slide-pagination-area .total").html(next);
     $(".members-slides-wrap .slide-pagination-area .current").html(current);
+
+    getSliderDotsPosition();
   })
 };

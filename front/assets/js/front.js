@@ -61,3 +61,14 @@ const _front = {
     })
   }
 }
+
+function debounce(callback, time = 500) {
+  let timeout
+  // closer
+  return function(...args) {
+      clearTimeout(timeout);			// 기존 타이머 삭지
+      timeout = setTimeout(() => {	// 새 타이머 할당
+          callback.apply(this, args);	// this binding
+      }, time)
+  }
+}

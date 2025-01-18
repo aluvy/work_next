@@ -162,6 +162,31 @@
   .section-contact .content-area { max-width: 100%; background: #eaeaea; padding: 72px var(--pad) 76px; margin-top: 46px; }
 
 
+
+
+
+  /* sub - member */
+  .members-slides-wrap { padding-top: 130px; }
+  .members-head { display: block; }
+  .members-slides-wrap .btn_back { width: 40px; height: 40px; background-size: 24px; }
+
+  .members-slider { margin-top: 40px; }
+  .members-slide-inner { height: auto; flex-direction: column; }
+  .members-slide-inner .photo { flex: 1 1 100%; width: 100%; }
+  .members-slide-inner .photo .img_mo { width: 100%; }
+  .members-slide-inner .profile { flex: 1 1 100%; width: 100%; border-right: 0 none; padding-bottom: 100px; }
+  .members-slide-inner .profile .inner { padding: 0 var(--pad) 0; }
+  .members-slide-inner .profile .btn_back { display: none; }
+  .members-slide-inner .profile .name { font-size: 24px; margin-top: 70px; }
+  .members-slide-inner .profile-data { margin-top: 30px; }
+  .members-slide-inner .profile-data + .profile-data { margin-top: 30px; }
+  .members-slide-inner .profile-data dt { font-size: 18px; }
+  .members-slide-inner .profile-data dd { font-size: 14px; }
+
+  .members-slider-dots { position: absolute; left: 0; top: 50px; display: block; width: 100%; padding-left: var(--pad); padding-right: var(--pad); }
+
+  .members-slides-wrap .slide-pagination-area { display: none; }
+
 }
 
 
@@ -173,6 +198,8 @@
 
   #header > .inner { height: 90px; }
   #header h1 { width: 100px; }
+
+  .members-slides-wrap { padding-top: 100px; }
 
 }
 
