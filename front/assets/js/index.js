@@ -92,6 +92,11 @@ const _whatWeDo = {
 
 
 const setFullPage = function() {
+
+  if ( window.innerWidth <= 1024 ) {
+    return;
+  }
+
   myFullpage = new fullpage('#fullpage', {
     anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
     scrollBar: true,
