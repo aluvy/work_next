@@ -1,11 +1,6 @@
 @charset "utf-8";
 
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
 @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css");
-
-
-/* <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/moonspam/NanumSquare@2.0/nanumsquare.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" /> */
 
 :root {
   font-size: 10px;
@@ -22,11 +17,10 @@
   --sal:constant(safe-area-inset-left);
   --sal:env(safe-area-inset-left);
 
-  --pad: 7%
+  --pad: 7%;
 }
 
-html, body, #wrap { width: 100%; min-height: 100%; }
-/* #wrap { overflow-y: scroll; } */
+html, body, #wrap { width: 100%; min-height: var(--vh); }
 * { box-sizing: border-box; }
 html { overscroll-behavior-y: none; }
 body {
@@ -46,9 +40,8 @@ body,dd,dl,dt,ul,ol,li,p,fieldset,form,input,textarea,select,button,table,legend
   padding: 0;
   color: inherit;
   font-weight: 400;
-  /* font-family: 'Pretendard', "Noto Sans KR", 'Malgun Gothic', Dotum, "Apple SD Gothic Neo", sans-serif, Arial, Helvetica, sans-serif; */
   font-family: 'Pretendard', "Apple SD Gothic Neo", sans-serif, Arial, Helvetica, sans-serif;
-  letter-spacing: -0.04em;
+  letter-spacing: -0.025em;
   /* outline:none; */
 }
 article,aside,footer,header,nav,main,menu,section,summary,details,hgroup,figure,figcaption {display:block;}
@@ -72,10 +65,6 @@ textarea::placeholder {opacity:1; color:#999;}
 
 input[type="password"]:not(:placeholder-shown){font-family: 'pass';}
 
-/* input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {appearance:none; -webkit-appearance:none; margin:0;}
-input[type="number"] {appearance:textfield; -moz-appearance:textfield;} */
-
 input::-ms-clear,
 input::-ms-reveal {display:none; width:0; height:0;}
 input::-webkit-search-decoration,
@@ -86,158 +75,9 @@ input[type=date]::-webkit-inner-spin-button {display:none;}
 input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-calendar-picker-indicator {display:none;}
 input[type=number] {-moz-appearance:textform;}
-/* input[type=checkbox]:focus{outline:none;} */
-/* select::-ms-expand {display:none;}
-select:required:invalid {color:#A0A4AF;}
-option[value=""][disabled] {display:none;} */
-
-
 
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background:rgba(33,122,244,.03); }
-::-webkit-scrollbar-thumb { background:rgba(0,0,0,.4); border-radius: 10px; } 
+::-webkit-scrollbar-thumb { background:rgba(0,0,0,.2); border-radius: 10px; } 
 
-
-
-
-
-
-
-
-.blind, .hidden{position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; white-space:nowrap;}
-
-
-
-
-
-
-
-
-
-
-
-
-/* html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td,
-article, aside, canvas, details, embed, 
-figure, figcaption, footer, header, hgroup, 
-menu, nav, output, ruby, section, summary,
-time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	font-size: 100%;
-	font: inherit;
-	vertical-align: baseline;
-}
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-html {
-	font-size: 10px;
-}
-body {
-	line-height: 1;
-	font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif, Arial;
-	font-size: 1.6rem;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
-}
-a, a:visited, a:hover, a:active{
-	color:inherit;
-	text-decoration: none;
-}
-input, textarea, select, button, a{
-	outline:none;
-}
-
-button {cursor:pointer; background:none; border:0 none;}
-
-::-webkit-scrollbar{width:5px}
-::-webkit-scrollbar-thumb{height:30%;background:rgba(0,0,0,.4);border-radius:10px}
-::-webkit-scrollbar-track{background:rgba(33,122,244,.03)}
-
-.blind{position:absolute; left:-9999px; top:-9999px; width:1px; height:1px; text-indent: -9999px; overflow:hidden;} */
-
-
-
-
-
-
-
-
-
-
-
-/* html { font-size:10px; height:100%; -webkit-text-size-adjust:none;  font-family: "Noto Sans KR", "Apple SD Gothic Neo", sans-serif, Arial; font-weight: normal; background:#fff; }
-
-body {font-size:1.2rem; width:100%; height:100%; margin:0; word-break:keep-all;}
-* {margin:0; padding:0; border:none;  -moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box; -webkit-tap-highlight-color:rgba(0,0,0,0);}
-
-*:before, *:after {-moz-box-sizing:border-box; -webkit-box-sizing:border-box; box-sizing:border-box;}
-
-h1, h2, h3, h4, h5, h6 {font-size:inherit; color:inherit;}
-fieldset, img {border:none; vertical-align:middle;}
-dl, ul, ol, menu, li {list-style:none;}
-iframe {overflow-x:hidden; overflow-y:hidden; margin:0; padding:0; border:none;}
-blockquote, q {quotes:none}
-blockquote:before, blockquote:after, q:before, q:after {content:''; content:none;}
-input, select, textarea, label, button {vertical-align:middle; font-family: 'OneLatin', 'nanumsquare', "Apple SD Gothic Neo", sans-serif, Arial;}
-option{  font-family:'OneLatin', 'nanumsquare', "Apple SD Gothic Neo", sans-serif, Arial;}
-button,label {cursor:pointer; background:none; border:none;}
-button {border:none; background-color:transparent; }
-i {font-style:normal; vertical-align: middle;}
-table {width:100%; border-collapse:collapse; border-spacing:0; empty-cells:show;}
-textarea {-webkit-appearance:none; border-radius:0; resize:none;}
-optgroup {background-color: #ffffff; color:#656262; font-weight:inherit;}
-option {display:block !important; color:#656262;}
-
-a {margin:0; padding:0; color:inherit; text-decoration:none;}
-a:hover {color:#8a8a8a; text-decoration:none !important;}
-a:active {background-color:transparent;}
-
-hr {overflow:hidden; width:0; height:0; color:transparent; line-height:0;}
-caption,legend {overflow:hidden; width:1px; height:1px; color:transparent; line-height:0;}
-address,caption,cite,code,dfn,em,var {font-style:normal; font-weight:normal;}
-
-.ip_select select:focus+.lb{border-bottom:1px solid -webkit-focus-ring-color;}
-input:focus+.ip_check .icon,
-input:focus+label .icon {outline: 1px dotted; outline: -webkit-focus-ring-color auto 5px;}
-
-.list_chekbox input[type=radio]:focus+label{outline:1px dotted; outline: -webkit-focus-ring-color auto 5px;}
-.list_chekbox input[type=checkbox]:focus+label{outline:1px dotted; outline: -webkit-focus-ring-color auto 5px;}
-.list_chekbox input[type=checkbox]:active+label{outline:none;}
-.list_chekbox input[type=checkbox]:hover+label{outline:none;}
-
-/* Report Form files */
-.file_wrap .label.on{outline:1px dotted; outline: -webkit-focus-ring-color auto 5px;}
-
-@media all and (min-width:1px) and (max-width:1024px) {
-	a:hover {color:inherit;}
-
-}
-
-@media all and (min-width:1px) and (max-width:767px) {
-	button {font-weight:bold;}
-} */
+.blind, .hidden { position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; white-space:nowrap;}

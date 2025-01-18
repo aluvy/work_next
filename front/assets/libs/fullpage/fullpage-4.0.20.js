@@ -5048,7 +5048,7 @@
       // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
       // var vh = win.innerHeight * 0.01; // Then we set the value in the --vh custom property to the root of the document
 
-      doc.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
+      // doc.documentElement.style.setProperty('--vh', "".concat(vh, "px"));
     }
   }
 
