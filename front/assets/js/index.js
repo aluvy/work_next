@@ -4,6 +4,8 @@ var partnersSlide;
 
 $(()=>{
 
+  _popup.init();
+
   // slogan slide random image
   setRandomImage();
 
@@ -43,8 +45,7 @@ const _whatWeDo = {
   tab() {
     $("[fn-tabs='whatwedo'] li a").on("click", function(e) {
 
-      const width = window.outerWidth;
-      if ( width <= 1024 ) {
+      if ( isMobileSize() ) {
         // console.log('이동')
       } else {
         e.preventDefault();
@@ -93,9 +94,7 @@ const _whatWeDo = {
 
 const setFullPage = function() {
 
-  if ( window.innerWidth <= 1024 ) {
-    return;
-  }
+  if ( isMobileSize() ) return;
 
   myFullpage = new fullpage('#fullpage', {
     anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
@@ -237,4 +236,27 @@ const setPartnersSlide = function() {
     partnersSlide.slick('slickGoTo', idx);
 
   })
+}
+
+
+const _popup = {
+  init() {
+    _popup.open();
+    _popup.handleClick();
+  },
+  open() {
+    $("#popup").show();
+  },
+  close() {
+    $("#popup").fadeOut();
+  },
+  handleClick() {
+    $("#popup .btn_close").on("click", function() {
+      _popup.close();
+    });
+
+    $("#popup .dimmed").on("click", function() {
+      _popup.close();
+    })
+  }
 }

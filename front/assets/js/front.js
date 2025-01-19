@@ -39,7 +39,17 @@ const _aside = {
 
       const idx = $(e.target).data('slide');
       _aside.close();
-      setTimeout(()=> myFullpage.moveTo(idx), 400);
+
+      if( isMobileSize() ) {
+        
+        window.location.href = `index.html#slide${idx}`;
+
+        // $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
+        
+      } else {
+        setTimeout(()=> myFullpage.moveTo(idx), 400);
+      }
+
     })
   }
 }
@@ -57,7 +67,13 @@ const _front = {
     const scrollDown = $("#scrolldown_button");
 
     scrollDown.off("click").on("click", function() {
-      myFullpage.moveSectionDown();
+
+      if( isMobileSize() ) {
+        $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
+
+      } else {
+        myFullpage.moveSectionDown();
+      }
     })
   }
 }
@@ -66,9 +82,12 @@ function debounce(callback, time = 500) {
   let timeout
   // closer
   return function(...args) {
-      clearTimeout(timeout);			// 기존 타이머 삭지
-      timeout = setTimeout(() => {	// 새 타이머 할당
-          callback.apply(this, args);	// this binding
+      clearTimeout(timeout);
+      timeout = setTimeout(() => {
+          callback.apply(this, args);
       }, time)
   }
 }
+
+// 1024 이하: 모바일로 동작
+const isMobileSize = () => window.innerWidth <= 1024 ? true : false;

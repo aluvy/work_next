@@ -58,9 +58,11 @@
 
 
   .br_pc,
-  .img_pc { display: none; }
+  .img_pc,
+  .a_name_pc { display: none; }
   .br_mo,
-  .img_mo { display: block; }
+  .img_mo,
+  .a_name_mo { display: block; }
 
   .scrolldown { left: 50%; bottom: 30px; transform: translate3d(-50%, -50%, 0); }
   #scrolldown_button { width: 30px; height: 30px; }
@@ -88,6 +90,16 @@
   /* aside open */
   .aside-open #header #aside_button.active::before,
   .aside-open #header #aside_button.active::after { background: #fff; }
+
+
+
+
+  /* popup */
+  #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); }
+  #popup .popup_body .desc { font-size: 13px; padding: 20px; letter-spacing: -0.056em; }
+  #popup .btn_close { top: -26px; width: 16px; height: 16px; }
+
+
 
 
 
@@ -188,6 +200,12 @@
   .members-slider-dots { position: absolute; left: 0; top: 50px; display: block; width: 100%; padding-left: var(--pad); padding-right: var(--pad); }
 
   .members-slides-wrap .slide-pagination-area { display: none; }
+
+
+  /* contact */
+  .section-contact .content-area dt { font-size: 18px; }
+  .section-contact .content-area dd { padding-top: 10px; }
+  .section-contact .content-area dd + dt { padding-top: 50px; }
 
 }
 
