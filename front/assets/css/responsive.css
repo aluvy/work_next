@@ -8,7 +8,8 @@
   .ttl-area .ttl { font-size: 70px; }
   .ttl-area .ttl.ttl-l { font-size: 70px; }
 
-  #header { top: 0; }
+  #header h1,
+  #header #aside_button { top: 90px; }
 
   .section-slogan .slogan-ttl h3 { font-size: 30px; }
   .section-slogan .slogan-ttl p { font-size: 20px; margin-top: 20px; }
@@ -21,7 +22,8 @@
 
 @media only screen and (max-width:1200px) {
 
-  #header > .inner { height: 140px; }
+  #header h1,
+  #header #aside_button { top: 70px; }
 
   .ttl-area .ttl { font-size: 60px; }
   .ttl-area .ttl.ttl-l { font-size: 60px; }
@@ -70,8 +72,8 @@
   .ttl-area .desc-l { font-size: 18px; }
 
 
-  #header > .inner { height: 120px; }
-
+  #header h1,
+  #header #aside_button { top: 30px; }
 
   #aside { display: block; background: #1E1E1E; padding-top: 180px }
   #aside .inner { padding: 0 var(--pad); }
@@ -196,8 +198,7 @@
     --pad: 26px;
   }
 
-  #header > .inner { height: 90px; }
-  #header h1 { width: 100px; }
+  #header h1 a { width: 100px; }
 
   .members-slides-wrap { padding-top: 100px; }
 
@@ -207,7 +208,6 @@
 
 @media only screen and (max-width:480px) {
 
-  /* .section-slogan .visual-slider-item .ttl-area {  } */
   .section-slogan .visual-slider-dots { bottom: 230px; }
 }
 

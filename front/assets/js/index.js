@@ -61,7 +61,7 @@ const _whatWeDo = {
       tab.addClass("active");
 
       panels.hide();
-      panel.show();
+      panel.fadeIn();
 
       _whatWeDo.reset();
 
@@ -72,20 +72,20 @@ const _whatWeDo = {
     $(".btn_techService").on("click", function(e) {
       e.preventDefault();
       $(e.target).hide();
-      $(".btn_techService-show").show();
+      $(".btn_techService-show").fadeIn();
     })
   },
   startupConsulting() {
     $(".what-panel2-1 .btn-area .btn").on("click", function(e) {
       e.preventDefault();
       $(".what-panel2-1").hide();
-      $(".what-panel2-2").show();
+      $(".what-panel2-2").fadeIn();
     });
 
     $(".what-panel2-2 .btn-area .btn").on("click", function(e) {
       e.preventDefault();
       $(".what-panel2-2").hide();
-      $(".what-panel2-1").show();
+      $(".what-panel2-1").fadeIn();
     });
   }
 }
@@ -100,6 +100,7 @@ const setFullPage = function() {
   myFullpage = new fullpage('#fullpage', {
     anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
     scrollBar: true,
+    scrollOverflow: true,
     responsiveHeight: 500,
     responsiveWidth: 1025,  // 너비가 1025일때 수동 원페이지 -> 스크롤
     afterLoad: function(anchorLink, index){
