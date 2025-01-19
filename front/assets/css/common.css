@@ -166,7 +166,7 @@
 .section-members .members-list li a:hover .photo img { transform: scale(1.1); }
 .section-members .members-list li .info { padding-top: 20px; }
 .section-members .members-list li .name { font-size: 22px; color: #222; font-weight: 600; }
-.section-members .members-list li span { display: block; font-size: 18px; color: #666; padding-top: 6px; }
+.section-members .members-list li span { display: block; font-size: 18px; font-weight: 200; color: #888; padding-top: 6px; }
 
 
 
