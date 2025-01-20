@@ -34,6 +34,7 @@ const setSloganSliderDotsPosition = function() {
   $(".visual-slider-dots").css("top", `${result}px`);
 }
 
+
 const setRandomImage = function() {
   const items = $(".section-slogan .visual-slider-item .thumbnail");
   let arr = [...items].map( x => Math.round(Math.random()) );
@@ -115,6 +116,7 @@ const setFullPage = function() {
   myFullpage = new fullpage('#fullpage', {
     anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
     scrollBar: true,
+    normalScrollElements: '.what-panel',
     scrollOverflow: true,
     responsiveHeight: 500,
     responsiveWidth: 1025,  // 너비가 1025일때 수동 원페이지 -> 스크롤
