@@ -23,15 +23,23 @@ $(()=>{
 });
 
 const setSloganSliderDotsPosition = function() {
-  const sliderBodyOffsetTop = $(".slogan-body").offset().top;
-  const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
 
-  const offsetTop = thumbnail.offset().top;
-  const height = thumbnail.height();
+  if( isMobileSize() ) {
 
-  const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
+    const sliderBodyOffsetTop = $(".slogan-body").offset().top;
+    const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
+  
+    const offsetTop = thumbnail.offset().top;
+    const height = thumbnail.height();
+  
+    const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
+  
+    $(".visual-slider-dots").css("top", `${result}px`);
+  } else {
+    
+    $(".visual-slider-dots").removeAttr("style");
+  }
 
-  $(".visual-slider-dots").css("top", `${result}px`);
 }
 
 
