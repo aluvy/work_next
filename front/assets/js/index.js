@@ -182,6 +182,11 @@ const setSloganSlide = function() {
     }
   });
 
+  sloganSlide.on("lazyLoaded", function() {
+    console.log('lazyLoaded');
+    setSloganSliderDotsPosition();
+  })
+
   sloganSlide.on("afterChange", function(event, slick, currentSlide) {
 
     nextSlide = ( currentSlide < totalCount -1 ) ? currentSlide + 1 : 0;
