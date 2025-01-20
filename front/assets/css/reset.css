@@ -76,8 +76,8 @@ input[type=number]::-webkit-inner-spin-button,
 input[type=number]::-webkit-calendar-picker-indicator {display:none;}
 input[type=number] {-moz-appearance:textform;}
 
-::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background:rgba(33,122,244,.03); }
-::-webkit-scrollbar-thumb { background:rgba(0,0,0,.2); border-radius: 10px; } 
+::-webkit-scrollbar-thumb { background:rgba(0,0,0,.2); border-radius: 10px; }
 
 .blind, .hidden { position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; white-space:nowrap;}

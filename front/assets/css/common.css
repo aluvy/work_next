@@ -39,6 +39,7 @@
 
 
 /* aside open */
+.aside-open { overflow: hidden; }
 .aside-open #header h1 a { filter: invert(1); }
 .aside-open #header #aside_button.active::before { top: 50%; transform: rotate(-45deg); background: #111; }
 .aside-open #header #aside_button.active::after { top: 50%; transform: rotate(-135deg); background: #111; }
@@ -278,11 +279,12 @@
 .whatwedo-wrap .btn_back { display: block; width: 40px; height: 40px; border: 1px solid #555; background: url("../img/ico_back.svg") center / 24px auto no-repeat; }
 .whatwedo-item { margin-top: 30px; display: none; }
 .whatwedo-ttl h2 { font-size: 24px; color: #222; font-weight: 500; }
-.whatwedo-content { margin-top: 40px; color: #555; line-height: 1.78; }
+.whatwedo-content { font-size: 14px; color: #555; line-height: 1.78; margin-top: 40px; padding-bottom: 70px; }
 .whatwedo-content .black { color: #222; }
 .whatwedo-content .bold { font-weight: 500; }
-.whatwedo-content .font22 { font-size: 22px; }
 .whatwedo-content .font18 { font-size: 18px; }
+.whatwedo-content .font22 { font-size: 22px; }
+.whatwedo-content .pt12 { padding-top: 12px; }
 .whatwedo-content .pt20 { padding-top: 20px; }
 .whatwedo-content .pt30 { padding-top: 30px; }
 .whatwedo-content .pt60 { padding-top: 60px; }

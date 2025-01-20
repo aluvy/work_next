@@ -77,14 +77,17 @@
   #header h1,
   #header #aside_button { top: 30px; }
 
-  #aside { display: block; background: #1E1E1E; padding-top: 180px }
+  #aside { display: block; overflow-y: auto; }
+  #aside::before { position: sticky; left: 0; top: 0; content: ''; display: block; width: 100%; height: 180px; background-color: #1e1e1e;; }
+  #aside::-webkit-scrollbar { display: none; }
   #aside .inner { padding: 0 var(--pad); }
 
-  #aside .aside-copy { position: absolute; left: 0; bottom: 0; display: block; width: 100%; padding: 0 0 30px; background-color: transparent; }
+  #aside .aside-copy { position: relative; left: initial; bottom: initial; display: block; width: 100%; padding: 80px 0 30px; background-color: #fff; }
 
-  #aside .aside-nav { display: block; height: 100%; background-color: #fff; }
+  #aside .aside-nav { display: block; min-height: calc(var(--vh) - 180px); background-color: #fff; }
   #aside .aside-nav ul { align-items: flex-start; padding-top: 50px; gap: 60px; }
   #aside .aside-nav ul li a { font-size: 28px; }
+
 
 
   /* aside open */
@@ -95,9 +98,10 @@
 
 
   /* popup */
-  #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); }
+  #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); box-shadow: 0px 5px 20px 0px rgba(0,0,0, 0.05); }
   #popup .popup_body .desc { font-size: 13px; padding: 20px; letter-spacing: -0.056em; }
   #popup .btn_close { top: -26px; width: 16px; height: 16px; }
+  #popup .dimmed { background: rgba(0,0,0, 0.2); }
 
 
 
