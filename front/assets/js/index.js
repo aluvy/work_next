@@ -58,6 +58,9 @@ const _whatWeDo = {
 
     $(".what-panel2-1").show();
     $(".what-panel2-2").hide();
+
+    $(".what-panel").scrollTop(0)
+
   },
   tab() {
     $("[fn-tabs='whatwedo'] li a").on("click", function(e) {
