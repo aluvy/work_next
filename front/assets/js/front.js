@@ -15,6 +15,14 @@ const _aside = {
 
     asideButton.addClass("active");
     body.addClass("aside-open");
+
+    try {
+      myFullpage.setAllowScrolling(false); // 스크롤 막기
+      myFullpage.setKeyboardScrolling(false); // 키보드로 스크롤 비활성화
+    } catch(e) {
+      // console.log(e);
+    }
+    
   },
   close: function() {
     const asideButton = $("#aside_button");
@@ -22,6 +30,13 @@ const _aside = {
     
     asideButton.removeClass("active");
     body.removeClass("aside-open");
+
+    try {
+      myFullpage.setAllowScrolling(true); // 스크롤 막기
+      myFullpage.setKeyboardScrolling(true); // 키보드로 스크롤 비활성화
+    } catch(e) {
+      // console.log(e);
+    }
   },
   handleClick() {
     const asideButton = $("#aside_button");
@@ -47,7 +62,13 @@ const _aside = {
         // $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
         
       } else {
-        setTimeout(()=> myFullpage.moveTo(idx), 400);
+
+        if( location.href.includes('index') ) {
+          setTimeout(()=> myFullpage.moveTo(idx), 400);
+        } else {
+          window.location.href = `index.html#slide${idx}`;
+        }
+      
       }
 
     })

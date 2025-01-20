@@ -81,3 +81,5 @@ input[type=number] {-moz-appearance:textform;}
 ::-webkit-scrollbar-thumb { background:rgba(0,0,0,.2); border-radius: 10px; }
 
 .blind, .hidden { position:absolute; clip:rect(0 0 0 0); width:1px; height:1px; margin:-1px; padding:0; border:0; overflow:hidden; white-space:nowrap;}
+
+.no-scroll { overflow: hidden; }

@@ -45,8 +45,6 @@ const setMembersSlide = function() {
   let initialSlide = getInitialSlide();
   let nextSlide = 0;
 
-  console.log('initialSlide', initialSlide);
-
   $(".members-slider").on('init', function(event, slick) {
     totalCount = slick.slideCount;
 

@@ -35,12 +35,16 @@ const setSloganSliderDotsPosition = function() {
     const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
     const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
-    $(".visual-slider-dots").css("top", `${result}px`);
+    $(".visual-slider-dots").css({"width": '', "top": `${result}px`});
     $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
 
   } else {
     
+    const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
+    const width = thumbnail.width();
+
     $(".visual-slider-dots").removeAttr("style");
+    $(".visual-slider-dots").css({"width": `${width}px`, "top": ``});
     $(".section-slogan .slide-pagination-area").removeAttr("style");
   }
 }
@@ -168,10 +172,11 @@ const setSloganSlide = function() {
     nextArrow: $('.section-slogan .slide-pagination-area .slide-next'),
     initialSlide: initialSlide,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 7000,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
+    fade: true,
     customPaging: function(slider, i) {
     	return $(`<button type="button"><span class="blind">${i + 1}</span></button>`);
     }
@@ -187,6 +192,8 @@ const setSloganSlide = function() {
     
     $(".section-slogan .slide-pagination-area .total").html(next);
     $(".section-slogan .slide-pagination-area .current").html(current);
+
+    setSloganSliderDotsPosition();
 
   })
 };
@@ -275,10 +282,24 @@ const _popup = {
     _popup.handleClick();
   },
   open() {
-    $("#popup.use").show();
+    const today = new Date().toISOString().split('T')[0]; // "YYYY-MM-DD" 형식
+    const lastClosedDate = localStorage.getItem('lastClosedDate');
+
+    // 오늘 하루 보지 않기 버튼이 클릭되지 않았거나 오늘 날짜가 저장되지 않은 경우
+    if (lastClosedDate !== today) {
+      $("#popup.use").show();
+      $("html, body").addClass("no-scroll");
+    }
+
   },
   close() {
+    const today = new Date().toISOString().split('T')[0];
+    const isChecked = $("#popup #today").is(':checked');
+
+    if ( isChecked ) localStorage.setItem("lastClosedDate", today);
+
     $("#popup").fadeOut();
+    $("html, body").removeClass("no-scroll");
   },
   handleClick() {
     $("#popup .btn_close").on("click", function() {

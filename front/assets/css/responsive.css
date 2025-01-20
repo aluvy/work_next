@@ -97,7 +97,8 @@
 
 
   /* popup */
-  #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); box-shadow: 0px 5px 20px 0px rgba(0,0,0, 0.05); }
+  #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); }
+  #popup .popup_body { box-shadow: 0px 5px 20px 0px rgba(0,0,0, 0.05); }
   #popup .popup_body .desc { font-size: 13px; padding: 20px; letter-spacing: -0.056em; }
   #popup .btn_close { top: -26px; width: 16px; height: 16px; }
   #popup .dimmed { background: rgba(0,0,0, 0.2); }
