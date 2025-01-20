@@ -275,11 +275,7 @@ const _popup = {
     _popup.handleClick();
   },
   open() {
-    const hash = location.hash.toLowerCase();
-
-    if( !hash.includes('nousepopup') ) {
-      $("#popup.use").show();
-    }
+    $("#popup.use").show();
   },
   close() {
     $("#popup").fadeOut();
