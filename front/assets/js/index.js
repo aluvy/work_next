@@ -24,8 +24,6 @@ $(()=>{
 
 const setSloganSliderDotsPosition = function() {
 
-  console.log('setSloganSliderDotsPosition');
-
   if( isMobileSize() ) {
 
     const sliderBodyOffsetTop = $(".slogan-body").offset().top;
@@ -37,7 +35,7 @@ const setSloganSliderDotsPosition = function() {
     const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
     const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
-    $(".visual-slider-dots").css({"width": '', "top": `${result}px`});
+    $(".visual-slider-dots").css("top", `${result}px`);
     $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
 
   } else {
@@ -46,7 +44,6 @@ const setSloganSliderDotsPosition = function() {
     const width = thumbnail.width();
 
     $(".visual-slider-dots").removeAttr("style");
-    $(".visual-slider-dots").css({"width": `${width}px`, "top": ``});
     $(".section-slogan .slide-pagination-area").removeAttr("style");
   }
 }
@@ -183,11 +180,6 @@ const setSloganSlide = function() {
     	return $(`<button type="button"><span class="blind">${i + 1}</span></button>`);
     }
   });
-
-  sloganSlide.on("lazyLoaded", function() {
-    console.log('lazyLoaded');
-    setSloganSliderDotsPosition();
-  })
 
   sloganSlide.on("afterChange", function(event, slick, currentSlide) {
 

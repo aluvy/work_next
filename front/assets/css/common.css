@@ -130,13 +130,13 @@
 .section-slogan .slogan-body { position: relative; width: 100%; }
 /* slider */
 .section-slogan .visual-slider-item { display: flex; align-items: flex-end; justify-content: space-between; }
-.section-slogan .visual-slider-item .ttl-area { flex: 1 1 40%; margin-right: auto; }
+.section-slogan .visual-slider-item .ttl-area { flex: 1 1 auto; margin-right: auto; }
 .section-slogan .visual-slider-item .ttl-area .ttl { padding-top: 16px; }
 .section-slogan .visual-slider-item .ttl-area .desc { padding-top: 36px; }
-.section-slogan .visual-slider-item .thumbnail { flex: 0 0 53%; width: 53%; max-width: 875px; box-sizing:content-box; }
-.section-slogan .visual-slider-item .thumbnail img { width: calc(100% - 60px); }
+.section-slogan .visual-slider-item .thumbnail { flex: 0 0 815px; width: 815px; max-width: 815px; box-sizing:content-box; margin-right: 60px; }
+.section-slogan .visual-slider-item .thumbnail img { width: 100%; }
 /* dots */
-.section-slogan .visual-slider-dots { position: absolute; right: 60px; width: calc(53% - 60px); max-width: 875px; padding-top: 38px; }
+.section-slogan .visual-slider-dots { position: absolute; right: 60px; width: 815px; max-width: 815px; padding-top: 38px; }
 .section-slogan .visual-slider-dots .slick-dots { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
 .section-slogan .visual-slider-dots .slick-dots li { flex: 1 1 auto; }
 .section-slogan .visual-slider-dots .slick-dots li button { display: block; width: 100%; height: 4px; background: #d9d9d9; transition: background .3s; }

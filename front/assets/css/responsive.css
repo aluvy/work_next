@@ -1,5 +1,10 @@
 @charset "utf-8";
 
+@media only screen and (max-width:1700px) {
+  .section-slogan .visual-slider-item .thumbnail { flex: 0 0 700px; width: 700px; max-width: 700px; margin-right: 0; }
+  .section-slogan .visual-slider-dots { right: 0; width: 700px; max-width: 700px; }
+}
+
 @media only screen and (max-width:1600px) {
   :root {
     --pad: 6%;
@@ -14,9 +19,14 @@
   .section-slogan .slogan-ttl h3 { font-size: 30px; }
   .section-slogan .slogan-ttl p { font-size: 20px; margin-top: 20px; }
 
-  .section-slogan .visual-slider-item .thumbnail img { width: 100%; }
-  .section-slogan .visual-slider-dots { right: 0; width: 53%; }
+  .section-slogan .visual-slider-item .thumbnail { flex: 0 0 650px; width: 650px; max-width: 650px; margin-right: 0; }
+  .section-slogan .visual-slider-dots { right: 0; width: 650px; max-width: 650px; }
+}
 
+
+@media only screen and (max-width:1400px) {
+  .section-slogan .visual-slider-item .thumbnail { flex: 0 0 590px; width: 590px; max-width: 590px; margin-right: 0; }
+  .section-slogan .visual-slider-dots { right: 0; width: 590px; max-width: 590px; }
 }
 
 
@@ -28,6 +38,8 @@
   .ttl-area .ttl { font-size: 60px; }
   .ttl-area .ttl.ttl-l { font-size: 60px; }
 
+  .section-slogan .visual-slider-item .thumbnail { flex: 0 0 500px; width: 500px; max-width: 500px; }
+  .section-slogan .visual-slider-dots { width: 500px; max-width: 500px; }
 
   .section-what .section-inner { padding-left: var(--pad); padding-right: var(--pad); }
   .section-what .what-tabs li a { font-size: 30px; }
@@ -54,8 +66,6 @@
   body,dd,dl,dt,ul,ol,li,p,fieldset,form,input,textarea,select,button,table,legend,th,td,h1,h2,h3,h4,h5,h6 {
     letter-spacing: -0.037em;
   }
-
-
 
   .br_pc,
   .img_pc,
@@ -95,7 +105,6 @@
 
 
 
-
   /* popup */
   #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); }
   #popup .popup_body { box-shadow: 0px 5px 20px 0px rgba(0,0,0, 0.05); }
@@ -105,15 +114,12 @@
 
 
 
-
-
   #fullpage .section,
   #fullpage .fp-overflow,
   .section-inner { height: auto; }
   .section-inner.v-center { display: inherit; align-items: inherit; }
 
   
-
   /* slogan */
   .section-slogan { padding-top: 120px; }
   .section-slogan .slogan-ttl { position: inherit; left: inherit; top: inherit; }
@@ -123,7 +129,7 @@
   .section-slogan .visual-slider-item { flex-direction: column; }
   .section-slogan .visual-slider-item .ttl-area { order: 2; margin-top: 56px; }
   .section-slogan .visual-slider-item .ttl-area .desc { padding-top: 26px; }
-  .section-slogan .visual-slider-item .thumbnail { flex: 1 1 100%; width: 100%; max-width: 100%; }
+  .section-slogan .visual-slider-item .thumbnail { flex: 1 1 100%; width: 100%; max-width: 100%; margin-right: 0; }
   .section-slogan .visual-slider-item .thumbnail img { aspect-ratio: 4 / 3; width: 100%; }
   .section-slogan .visual-slider-dots { left: 0; right: initial; bottom: initial; width: 100%; max-width: 100%; padding: 0; }
   .section-slogan .visual-slider-dots .slick-dots li button { height: 2px; }
@@ -134,7 +140,6 @@
  
   
   
-
   /* what we do */
   .section-what { padding-top: 246px; padding-bottom: 50px; }
   .section-what .what-contents { display: block; padding-top: 46px; }
@@ -143,11 +148,13 @@
   .section-what .what-tabs li.active a { background: #ededed; }
   .section-what .what-panels { display: none; }
 
+
   /* members */
   .section-members { padding-top: 130px; padding-bottom: 200px; }
   .section-members .ttl-area .desc { padding-top: 20px; padding-left: 0; }
   .section-members .ttl-area .desc-l { padding-top: 46px; }
   .section-members .members-list { flex-direction: column; align-items: center; gap: 50px; padding-top: 50px; }
+
 
   /* partners */
   .section-partners { }
@@ -161,14 +168,10 @@
   .section-partners .ttl-area { padding-left: var(--pad); padding-right: var(--pad); }
   .section-partners .ttl-area .desc { padding-top: 46px; }
   .section-partners .ttl-area .btn-area { display: none; }
-
   .section-partners .logo-area { margin-top: 50px; padding-left: 0; padding-right: 0; aspect-ratio: 1 / 1; }
   .section-partners .logo-area img { width: 50%; max-width: 140px; margin: 0 auto; }
-
   .section-partners .clients_bg { margin-top: 30px; aspect-ratio: 6 / 7; }
-
   .section-partners .slide-pagination-area { display: none; }
-
 
 
 
@@ -178,7 +181,6 @@
   .section-contact .contact-body { display: block; }
   .section-contact .ttl-area { max-width: 100%; padding-left: var(--pad); padding-right: var(--pad); }
   .section-contact .content-area { max-width: 100%; background: #eaeaea; padding: 72px var(--pad) 76px; margin-top: 46px; }
-
 
 
 
@@ -234,7 +236,6 @@
 
 
 @media only screen and (max-width:480px) {
-
   .section-slogan .visual-slider-dots { bottom: 230px; }
 }
 
