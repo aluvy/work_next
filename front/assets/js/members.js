@@ -10,14 +10,24 @@ $(()=>{
 });
 
 const setSliderDotsPosition = function() {
+
+  if( isMobileSize() ) {
   
-  const photo = $(".slick-active .members-slide-inner .photo");
-  const offsetTop = photo.offset().top;
-  const height = photo.height();
+    const photo = $(".slick-active .members-slide-inner .photo");
+    const offsetTop = photo.offset().top;
+    const height = photo.height();
 
-  const result = Math.floor(offsetTop + height + 16);
+    const result = Math.floor(offsetTop + height + 16);
+    const resultPagination = Math.floor(offsetTop + (height / 2) - 15 );
 
-  $(".members-slider-dots").css("top", `${result}px`);
+    $(".members-slider-dots").css("top", `${result}px`);
+    $(".members-slides-wrap .slide-pagination-area").css("top", `${resultPagination}px`);
+
+  } else {
+
+    $(".members-slider-dots").removeAttr("style");
+    $(".members-slides-wrap .slide-pagination-area").removeAttr("style");
+  }
 }
 
 const getInitialSlide = function() {
@@ -54,7 +64,6 @@ const setMembersSlide = function() {
     dots: true,
     appendDots: $('.members-slider-dots'),
     arrows: true,
-    // appendArrows: $('.members-silder-arrows'),
     prevArrow: $('.members-slides-wrap .slide-pagination-area .slide-prev'),
     nextArrow: $('.members-slides-wrap .slide-pagination-area .slide-next'),
     initialSlide: initialSlide,
@@ -69,10 +78,6 @@ const setMembersSlide = function() {
   });
 
   membersSlide.on("afterChange", function(event, slick, currentSlide) {
-
-    // const current = String(currentSlide + 1).padStart(2, 0);
-    // $(".visual-silder-arrows .current").html(current);
-
     nextSlide = ( currentSlide < totalCount -1 ) ? currentSlide + 1 : 0;
 
     const total = String(totalCount).padStart(2, 0);
@@ -81,7 +86,5 @@ const setMembersSlide = function() {
     
     $(".members-slides-wrap .slide-pagination-area .total").html(next);
     $(".members-slides-wrap .slide-pagination-area .current").html(current);
-
-    getSliderDotsPosition();
   })
 };

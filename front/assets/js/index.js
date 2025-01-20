@@ -33,13 +33,16 @@ const setSloganSliderDotsPosition = function() {
     const height = thumbnail.height();
   
     const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
+    const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
     $(".visual-slider-dots").css("top", `${result}px`);
+    $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
+
   } else {
     
     $(".visual-slider-dots").removeAttr("style");
+    $(".section-slogan .slide-pagination-area").removeAttr("style");
   }
-
 }
 
 
@@ -175,8 +178,6 @@ const setSloganSlide = function() {
   });
 
   sloganSlide.on("afterChange", function(event, slick, currentSlide) {
-    // const current = String(currentSlide + 1).padStart(2, 0);
-    // $(".visual-silder-arrows .current").html(current);
 
     nextSlide = ( currentSlide < totalCount -1 ) ? currentSlide + 1 : 0;
 
@@ -274,7 +275,11 @@ const _popup = {
     _popup.handleClick();
   },
   open() {
-    $("#popup.use").show();
+    const hash = location.hash.toLowerCase();
+
+    if( !hash.includes('nousepopup') ) {
+      $("#popup.use").show();
+    }
   },
   close() {
     $("#popup").fadeOut();
