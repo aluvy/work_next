@@ -24,6 +24,8 @@ $(()=>{
 
 const setSloganSliderDotsPosition = function() {
 
+  console.log('setSloganSliderDotsPosition');
+
   if( isMobileSize() ) {
 
     const sliderBodyOffsetTop = $(".slogan-body").offset().top;
