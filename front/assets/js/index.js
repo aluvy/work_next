@@ -11,12 +11,28 @@ $(()=>{
 
   setFullPage();
   setSloganSlide();
+  
+  setSloganSliderDotsPosition();
+  window.addEventListener('resize', debounce(setSloganSliderDotsPosition, 100));
+
   setPartnersSlide();
 
   // What we do
   _whatWeDo.init();
 
 });
+
+const setSloganSliderDotsPosition = function() {
+  const sliderBodyOffsetTop = $(".slogan-body").offset().top;
+  const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
+
+  const offsetTop = thumbnail.offset().top;
+  const height = thumbnail.height();
+
+  const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
+
+  $(".visual-slider-dots").css("top", `${result}px`);
+}
 
 const setRandomImage = function() {
   const items = $(".section-slogan .visual-slider-item .thumbnail");
@@ -245,7 +261,7 @@ const _popup = {
     _popup.handleClick();
   },
   open() {
-    $("#popup").show();
+    $("#popup.use").show();
   },
   close() {
     $("#popup").fadeOut();

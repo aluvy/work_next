@@ -4,12 +4,12 @@ $(()=>{
 
   setMembersSlide();
 
-  getSliderDotsPosition();
-  window.addEventListener('resize', debounce(getSliderDotsPosition, 100));
+  setSliderDotsPosition();
+  window.addEventListener('resize', debounce(setSliderDotsPosition, 100));
 
 });
 
-const getSliderDotsPosition = function() {
+const setSliderDotsPosition = function() {
   
   const photo = $(".slick-active .members-slide-inner .photo");
   const offsetTop = photo.offset().top;
