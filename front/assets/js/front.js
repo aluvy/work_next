@@ -4,7 +4,41 @@ $(()=>{
 
   window.addEventListener('resize', debounce(updateVh, 300));
   window.addEventListener('scroll', updateScrollState);
+
+  updateMobileScroll();
 });
+
+
+const updateMobileScroll = function() {
+
+  if ( isMobileSize() ) {
+    let hash = location.hash;
+    if (hash) {
+      hash = hash.replace("#", "");
+      
+      const el = $(`a[name='${hash}']`);
+      if (el) {
+        scrollMoveTo(el);
+      }
+
+    }
+  }
+}
+
+
+const scrollMoveTo = function(element) {
+
+  if ( !element ) return;
+
+  setTimeout(()=>{
+
+    const offset = Math.floor(element.offset().top);
+    $('html, body').stop().animate( { scrollTop : `${offset}px` }, 500 );
+
+    location.hash = `#${$(element).attr('name')}`;
+
+  }, 500);
+}
 
 
 const updateScrollState = function() {
@@ -76,13 +110,13 @@ const _aside = {
 
       if( isMobileSize() ) {
         
-        window.location.href = `index.html#slide${idx}`;
-
-        // $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
+        const el = $(`a[name=slide${idx}]`);
+        scrollMoveTo(el);
         
       } else {
 
         if( location.href.includes('index') ) {
+
           setTimeout(()=> myFullpage.moveTo(idx), 400);
         } else {
           window.location.href = `index.html#slide${idx}`;
