@@ -21,6 +21,7 @@
 }
 
 html, body, #wrap { width: 100%; min-height: var(--vh); }
+html, body { min-width: 320px; }
 * { box-sizing: border-box; }
 html { overscroll-behavior-y: none; }
 body {

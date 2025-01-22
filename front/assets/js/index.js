@@ -1,4 +1,5 @@
 var myFullpage;
+var useFullpage = false;
 var sloganSlide;
 var partnersSlide;
 
@@ -10,6 +11,8 @@ $(()=>{
   setRandomImage();
 
   setFullPage();
+  window.addEventListener('resize', debounce(updateFullpage, 300));
+
   setSloganSlide();
   
   setPartnersSlide();
@@ -37,19 +40,19 @@ const setSloganSliderDotsPosition = function() {
 
     const height = thumbnail.height();
     
-    const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
+    // const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
     const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
-    $(".visual-slider-dots").css("top", `${result}px`);
+    // $(".visual-slider-dots").css("top", `${result}px`);
     $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
     
 
   } else {
     
-    const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
-    const width = thumbnail.width();
+    // const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
+    // const width = thumbnail.width();
 
-    $(".visual-slider-dots").removeAttr("style");
+    // $(".visual-slider-dots").removeAttr("style");
     $(".section-slogan .slide-pagination-area").removeAttr("style");
   }
 }
@@ -132,6 +135,19 @@ const _whatWeDo = {
 }
 
 
+const updateFullpage = function() {
+
+  if ( useFullpage && isMobileSize() ) {
+    myFullpage.destroy('all');
+    useFullpage = false;
+
+  } else if ( !useFullpage && !isMobileSize() ) {
+    setFullPage();
+    useFullpage = true;
+  }
+}
+
+
 const setFullPage = function() {
 
   if ( isMobileSize() ) return;
@@ -147,6 +163,8 @@ const setFullPage = function() {
       // console.log('afterLoad', anchorLink, index);
     },
   });
+
+  useFullpage = true;
 }
 
 
@@ -176,8 +194,9 @@ const setSloganSlide = function() {
     prevArrow: $('.section-slogan .slide-pagination-area .slide-prev'),
     nextArrow: $('.section-slogan .slide-pagination-area .slide-next'),
     initialSlide: initialSlide,
-    autoplay: true,
+    autoplay: false,
     autoplaySpeed: 7000,
+    variableWidth: false,
     infinite: true,
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -197,9 +216,6 @@ const setSloganSlide = function() {
     
     $(".section-slogan .slide-pagination-area .total").html(next);
     $(".section-slogan .slide-pagination-area .current").html(current);
-
-    // console.log('setSloganSlide')
-    // setSloganSliderDotsPosition();
 
   })
 };
@@ -293,8 +309,6 @@ const _popup = {
 
     // 오늘 하루 보지 않기 버튼이 클릭되지 않았거나 오늘 날짜가 저장되지 않은 경우
     if (lastClosedDate != today) {
-      console.log(lastClosedDate, today);
-      
       setTimeout(()=>{
         $("#popup.use").show();
         $("html, body").addClass("no-scroll");

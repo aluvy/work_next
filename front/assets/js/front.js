@@ -1,7 +1,16 @@
 $(()=>{
   _front.init();
   _aside.init();
+
+  window.addEventListener('resize', debounce(updateVh, 300));
 });
+
+const updateVh = function() {
+  if( !isMobileSize() ) {
+    console.log('updateVh update');
+    _front.vh();
+  }
+}
 
 
 const _aside = {
