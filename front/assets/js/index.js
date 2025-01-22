@@ -12,13 +12,13 @@ $(()=>{
   setFullPage();
   setSloganSlide();
   
-  setSloganSliderDotsPosition();
-  window.addEventListener('resize', debounce(setSloganSliderDotsPosition, 100));
-
   setPartnersSlide();
-
+  
   // What we do
   _whatWeDo.init();
+
+  setSloganSliderDotsPosition();
+  window.addEventListener('resize', debounce(setSloganSliderDotsPosition, 100));
 
 });
 
@@ -28,15 +28,21 @@ const setSloganSliderDotsPosition = function() {
 
     const sliderBodyOffsetTop = $(".slogan-body").offset().top;
     const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
-  
-    const offsetTop = thumbnail.offset().top;
+
+    let offsetTop = 0;
+
+    if( thumbnail.length > 0 ) {
+      offsetTop = thumbnail.offset().top;
+    }
+
     const height = thumbnail.height();
-  
+    
     const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
     const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
     $(".visual-slider-dots").css("top", `${result}px`);
     $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
+    
 
   } else {
     
@@ -192,7 +198,8 @@ const setSloganSlide = function() {
     $(".section-slogan .slide-pagination-area .total").html(next);
     $(".section-slogan .slide-pagination-area .current").html(current);
 
-    setSloganSliderDotsPosition();
+    // console.log('setSloganSlide')
+    // setSloganSliderDotsPosition();
 
   })
 };
@@ -285,7 +292,7 @@ const _popup = {
     const lastClosedDate = localStorage.getItem('lastClosedDate');
 
     // 오늘 하루 보지 않기 버튼이 클릭되지 않았거나 오늘 날짜가 저장되지 않은 경우
-    if (lastClosedDate !== today) {
+    if (lastClosedDate != today) {
       $("#popup.use").show();
       $("html, body").addClass("no-scroll");
     }
