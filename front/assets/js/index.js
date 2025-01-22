@@ -293,8 +293,12 @@ const _popup = {
 
     // 오늘 하루 보지 않기 버튼이 클릭되지 않았거나 오늘 날짜가 저장되지 않은 경우
     if (lastClosedDate != today) {
-      $("#popup.use").show();
-      $("html, body").addClass("no-scroll");
+      console.log(lastClosedDate, today);
+      
+      setTimeout(()=>{
+        $("#popup.use").show();
+        $("html, body").addClass("no-scroll");
+      }, 100);
     }
 
   },
