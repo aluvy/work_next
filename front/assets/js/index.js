@@ -194,7 +194,7 @@ const setSloganSlide = function() {
     prevArrow: $('.section-slogan .slide-pagination-area .slide-prev'),
     nextArrow: $('.section-slogan .slide-pagination-area .slide-next'),
     initialSlide: initialSlide,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 7000,
     variableWidth: false,
     infinite: true,
