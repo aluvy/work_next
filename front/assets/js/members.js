@@ -14,11 +14,19 @@ const setSliderDotsPosition = function() {
   if( isMobileSize() ) {
   
     const photo = $(".slick-active .members-slide-inner .photo");
-    const offsetTop = photo.offset().top;
-    const height = photo.height();
 
-    const result = Math.floor(offsetTop + height + 16);
-    const resultPagination = Math.floor(offsetTop + (height / 2) - 15 );
+    let offsetTop = 0;
+    let height = 0;
+    let result = 0;
+    let resultPagination = 0;
+
+
+    if( photo.length > 0 ) {
+      offsetTop = photo.offset().top;
+      height = photo.height();
+      result = Math.floor(offsetTop + height + 16);
+      resultPagination = Math.floor(offsetTop + (height / 2) - 15 );
+    }
 
     $(".members-slider-dots").css("top", `${result}px`);
     $(".members-slides-wrap .slide-pagination-area").css("top", `${resultPagination}px`);
@@ -84,5 +92,7 @@ const setMembersSlide = function() {
     
     $(".members-slides-wrap .slide-pagination-area .total").html(next);
     $(".members-slides-wrap .slide-pagination-area .current").html(current);
+
+    setSliderDotsPosition();
   })
 };
