@@ -3,7 +3,17 @@ $(()=>{
   _aside.init();
 
   window.addEventListener('resize', debounce(updateVh, 300));
+  window.addEventListener('scroll', updateScrollState);
 });
+
+
+const updateScrollState = function() {
+  if ( scrollY !== 0 ) {
+    $("html").addClass("scrolled");
+  } else {
+    $("html").removeClass("scrolled");
+  }
+}
 
 const updateVh = function() {
   if( !isMobileSize() ) {
