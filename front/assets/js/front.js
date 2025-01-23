@@ -5,7 +5,6 @@ $(()=>{
   window.addEventListener('resize', debounce(updateVh, 300));
   window.addEventListener('scroll', updateScrollState);
 
-  updateMobileScroll();
 });
 
 
@@ -108,8 +107,11 @@ const _aside = {
       _aside.close();
 
       if( isMobileSize() || isSmallHeight() ) {
+
         
         const el = $(`a[name=slide${idx}]`);
+
+        console.log(idx);
         scrollMoveTo(el);
         
       } else {
@@ -143,14 +145,14 @@ const _front = {
 
       if( isMobileSize() || isSmallHeight() ) {
 
-        let idx = location.hash;
-        idx = idx == '' ? 0 : idx.replace("#slide", '');
-        idx = idx * 1 + 1;
+        // let idx = location.hash;
+        // idx = idx == '' ? 0 : idx.replace("#slide", '');
+        // idx = idx * 1 + 1;
 
-        const element = $(`a[name='slide${idx}']`);
-        scrollMoveTo(element);
-
-        // $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
+        // const element = $(`a[name='slide${idx}']`);
+        // scrollMoveTo(element);
+        const height = window.innerHeight;
+        $('html, body').stop().animate( { scrollTop : scrollY + height } );
 
       } else {
         myFullpage.moveSectionDown();
