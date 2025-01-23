@@ -21,7 +21,7 @@
 #header h1 { position: relative; top: 75px; display: block; margin-right: auto; z-index: 2; transition: top .3s; }
 #header h1 a { display: block; width: 112px; height: 30px; background: url('../img/logo.svg') center / contain no-repeat; transition: all .6s; }
 #header .utils { position: relative; top: 75px; z-index: 2; transition: top .3s; }
-#header #aside_button { position: relative; display: block; width: 30px; height: 30px; }
+#header #aside_button { position: relative; display: block; width: 30px; height: 30px; }구
 #header #aside_button::before,
 #header #aside_button::after { position: absolute; content: ''; display: block; width: 30px; height: 2px; background: #111; transition: all .3s; }
 #header #aside_button::before { left: 0; top: 10px; }
@@ -132,7 +132,7 @@
 #fullpage .section.fp-auto-height { height: auto; }
 #fullpage .fp-overflow { height: 100%; }
 
-[data-device='pc'][data-height='small'] #fullpage .section { height: auto; padding-top: 120px; padding-bottom: 120px; }
+[data-device='pc'][data-height='small'] #fullpage .section { height: auto; min-height: var(--vh); padding-top: 120px; padding-bottom: 120px; overflow: visible; }
 
 
 /* fullpage: slogan */
