@@ -38,21 +38,13 @@ const setSloganSliderDotsPosition = function() {
       offsetTop = thumbnail.offset().top;
     }
 
-    const height = thumbnail.height();
-    
-    // const result = Math.floor(offsetTop - sliderBodyOffsetTop + height + 14);
+    const height = thumbnail.height();  
     const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
-    // $(".visual-slider-dots").css("top", `${result}px`);
     $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
     
 
   } else {
-    
-    // const thumbnail = $(".visual-slider .slick-active .visual-slider-item .thumbnail");
-    // const width = thumbnail.width();
-
-    // $(".visual-slider-dots").removeAttr("style");
     $(".section-slogan .slide-pagination-area").removeAttr("style");
   }
 }
@@ -137,20 +129,25 @@ const _whatWeDo = {
 
 const updateFullpage = function() {
 
-  if ( useFullpage && isMobileSize() ) {
+  if ( useFullpage && (isMobileSize() || isSmallHeight()) ) {
     myFullpage.destroy('all');
     useFullpage = false;
+    $("html").addClass("fullpage-destroy");
 
-  } else if ( !useFullpage && !isMobileSize() ) {
+  } else if ( !useFullpage && !isMobileSize() && !isSmallHeight() ) {
     setFullPage();
     useFullpage = true;
+    $("html").removeClass("fullpage-destroy");
   }
 }
 
 
 const setFullPage = function() {
 
-  if ( isMobileSize() ) return;
+  if ( isMobileSize() || isSmallHeight() ) {
+    $("html").addClass("fullpage-destroy");
+    return;
+  };
 
   myFullpage = new fullpage('#fullpage', {
     anchors: ['slide1', 'slide2', 'slide3', 'slide4', 'slide5', 'footer'],
@@ -165,6 +162,7 @@ const setFullPage = function() {
   });
 
   useFullpage = true;
+  $("html").removeClass("fullpage-destroy");
 }
 
 

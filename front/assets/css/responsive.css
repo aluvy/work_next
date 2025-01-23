@@ -1,8 +1,6 @@
 @charset "utf-8";
 
 @media only screen and (max-width:1700px) {
-  /* .section-slogan .visual-slider-item .thumbnail { flex: 0 0 700px; padding: 0; }
-  .section-slogan .visual-slider-dots { width: 700px; padding: 38px 0 0; } */
   .section-slogan .visual-slider-item .thumbnail { padding: 0; }
   .section-slogan .visual-slider-dots { padding: 38px 0 0; }
 }
@@ -15,17 +13,16 @@
   .ttl-area .ttl { font-size: 70px; }
   .ttl-area .ttl.ttl-l { font-size: 70px; }
 
-  #header h1,
-  #header .utils { top: 80px; }
-
   .section-slogan .slogan-ttl h3 { font-size: 42px; }
-  .section-slogan .slogan-ttl p { font-size: 30px; margin-top: 20px; }
+  .section-slogan .slogan-ttl p { font-size: 30px; }
 }
 
 
 @media only screen and (max-width:1400px) {
-  /* .section-slogan .visual-slider-item .thumbnail { flex: 0 0 590px; }
-  .section-slogan .visual-slider-dots { width: 590px; } */
+  .section-slogan .slogan-ttl h3 { font-size: 38px; }
+  .section-slogan .slogan-ttl p { font-size: 26px; margin-top: 14px; }
+  .section-slogan .visual-slider-item .ttl-area .ttl { padding-top: 10px; }
+  .section-slogan .visual-slider-item .ttl-area .desc { padding-top: 20px; }
 
   .section-members .ttl-area { padding-left: 0; }
 }
@@ -33,14 +30,11 @@
 
 @media only screen and (max-width:1200px) {
 
-  #header h1,
-  #header .utils { top: 70px; }
-
   .ttl-area .ttl { font-size: 60px; }
   .ttl-area .ttl.ttl-l { font-size: 60px; }
 
-  /* .section-slogan .visual-slider-item .thumbnail { flex: 0 0 500px; }
-  .section-slogan .visual-slider-dots { width: 500px; } */
+  .section-slogan .slogan-ttl h3 { font-size: 34px; }
+  .section-slogan .slogan-ttl p { font-size: 22px; }
 
   .section-what .section-inner { padding-left: var(--pad); padding-right: var(--pad); }
   .section-what .what-tabs li a { font-size: 30px; }
@@ -86,7 +80,7 @@
 
 
   #header h1,
-  #header .utils { top: 30px; }
+  #header .utils { top: 45px; }
 
   #aside { display: flex; flex-direction: column; justify-content: space-between; min-height: calc(var(--vh) - 180px); overflow-y: auto; }
   #aside::before { flex: 0 0 180px; position: sticky; left: 0; top: 0; content: ''; display: block; width: 100%; height: 180px; background-color: #1e1e1e;; }

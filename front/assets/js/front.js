@@ -11,7 +11,7 @@ $(()=>{
 
 const updateMobileScroll = function() {
 
-  if ( isMobileSize() ) {
+  if ( isMobileSize() || isSmallHeight() ) {
     let hash = location.hash;
     if (hash) {
       hash = hash.replace("#", "");
@@ -51,7 +51,6 @@ const updateScrollState = function() {
 
 const updateVh = function() {
   if( !isMobileSize() ) {
-    console.log('updateVh update');
     _front.vh();
   }
 }
@@ -108,7 +107,7 @@ const _aside = {
       const idx = $(e.target).data('slide');
       _aside.close();
 
-      if( isMobileSize() ) {
+      if( isMobileSize() || isSmallHeight() ) {
         
         const el = $(`a[name=slide${idx}]`);
         scrollMoveTo(el);
@@ -142,8 +141,16 @@ const _front = {
 
     scrollDown.off("click").on("click", function() {
 
-      if( isMobileSize() ) {
-        $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
+      if( isMobileSize() || isSmallHeight() ) {
+
+        let idx = location.hash;
+        idx = idx == '' ? 0 : idx.replace("#slide", '');
+        idx = idx * 1 + 1;
+
+        const element = $(`a[name='slide${idx}']`);
+        scrollMoveTo(element);
+
+        // $('html, body').stop().animate( { scrollTop : scrollY + 600 } );
 
       } else {
         myFullpage.moveSectionDown();
@@ -163,5 +170,29 @@ function debounce(callback, time = 500) {
   }
 }
 
-// 1024 이하: 모바일로 동작
-const isMobileSize = () => window.innerWidth <= 1024 ? true : false;
+// 가로 1024 이하: 모바일로 동작
+const isMobileSize = () => {
+  const result = window.innerWidth <= 1024 ? true : false;
+
+  if ( result ) {
+    $("html").attr("data-device", "mobile");
+  } else {
+    $("html").attr("data-device", "pc");
+  }
+
+  return result;
+};
+
+// 세로 900이하: html[data-height="small"] 세팅
+const isSmallHeight = () => {
+  
+  const result = window.innerHeight <= 900 ? true : false;
+
+  if ( result ) {
+    $("html").attr("data-height", "small");
+  } else {
+    $("html").attr("data-height", "normal");
+  }
+
+  return result;
+};
