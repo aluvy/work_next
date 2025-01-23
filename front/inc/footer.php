@@ -27,6 +27,7 @@
       </div>
       <div class="dimmed"></div>
     </div>
+    <script src="assets/js/popup.js"></script>
   <?php } ?>
 
 </body>
