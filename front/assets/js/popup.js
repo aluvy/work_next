@@ -11,7 +11,7 @@ const _popup = {
     if (lastClosedDate != today) {
       setTimeout(()=>{
         $("#popup.use").show();
-        // $("html, body").addClass("no-scroll");
+        $("html, body").addClass("no-scroll");
       }, 100);
     }
 
