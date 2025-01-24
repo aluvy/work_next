@@ -94,8 +94,13 @@ const _aside = {
       _aside.close();
 
       if( isMobileSize() || isSmallHeight() ) {
-        const el = $(`a[name=slide${idx}]`);
-        scrollMoveTo(el);
+
+        if( location.href.includes('index') ) {
+          const el = $(`a[name=slide${idx}]`);
+          scrollMoveTo(el);
+        } else {
+          window.location.href = `index.html#slide${idx}`;
+        }
         
       } else {
 
