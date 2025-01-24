@@ -17,7 +17,29 @@ $(()=>{
 
   setSloganSliderDotsPosition();
   window.addEventListener('resize', debounce(setSloganSliderDotsPosition, 100));
+
+  
+  setTimeout(()=>{
+    const hasPopup = $("html").hasClass("has-popup");
+    if ( hasPopup ) return;
+    
+    const hash = location.hash;
+    setScrollPosition(hash);
+  }, 300)
+
 });
+
+
+const setScrollPosition = function(hash) {
+  if ( hash != '' ) {
+    if ( isMobileSize() || isSmallHeight() ) {
+      const idx = hash.replace("#slide", "");
+      const element = $(`a[name=slide${idx}]`);
+      const offset = Math.floor(element.offset().top);
+      $('html, body').stop().animate( { scrollTop : `${offset}px` }, 500 );
+    }
+  }
+}
 
 
 const setSloganSliderDotsPosition = function() {

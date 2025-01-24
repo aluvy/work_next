@@ -16,7 +16,7 @@ const _popup = {
     if (lastClosedDate != today) {
       setTimeout(()=>{
         $("#popup.use").show();
-        $("html, body").addClass("no-scroll");
+        $("html, body").addClass("no-scroll has-popup");
       }, 100);
     }
   },
@@ -27,7 +27,10 @@ const _popup = {
     if ( isChecked ) localStorage.setItem("lastClosedDate", today);
 
     $("#popup").fadeOut();
-    $("html, body").removeClass("no-scroll");
+    $("html, body").removeClass("no-scroll has-popup");
+
+    const hash = location.hash;
+    setScrollPosition(hash);
   },
   handleClick() {
     $("#popup .btn_close").on("click", function() {
