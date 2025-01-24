@@ -1,12 +1,10 @@
 var membersSlide;
 
 $(()=>{
-
   setMembersSlide();
 
   setSliderDotsPosition();
   window.addEventListener('resize', debounce(setSliderDotsPosition, 100));
-
 });
 
 const setSliderDotsPosition = function() {
@@ -19,7 +17,6 @@ const setSliderDotsPosition = function() {
     let height = 0;
     let result = 0;
     let resultPagination = 0;
-
 
     if( photo.length > 0 ) {
       offsetTop = photo.offset().top;
@@ -37,6 +34,7 @@ const setSliderDotsPosition = function() {
     $(".members-slides-wrap .slide-pagination-area").removeAttr("style");
   }
 }
+
 
 const getInitialSlide = function() {
   const search = location.search;

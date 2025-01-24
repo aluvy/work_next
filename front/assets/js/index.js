@@ -4,15 +4,12 @@ var sloganSlide;
 var partnersSlide;
 
 $(()=>{
-
-  // slogan slide random image
-  setRandomImage();
+  setRandomImage(); // slogan slide random image
 
   setFullPage();
   window.addEventListener('resize', debounce(updateFullpage, 300));
 
   setSloganSlide();
-  
   setPartnersSlide();
   
   // What we do
@@ -20,8 +17,8 @@ $(()=>{
 
   setSloganSliderDotsPosition();
   window.addEventListener('resize', debounce(setSloganSliderDotsPosition, 100));
-
 });
+
 
 const setSloganSliderDotsPosition = function() {
 
@@ -32,15 +29,12 @@ const setSloganSliderDotsPosition = function() {
 
     let offsetTop = 0;
 
-    if( thumbnail.length > 0 ) {
-      offsetTop = thumbnail.offset().top;
-    }
+    if( thumbnail.length > 0 ) offsetTop = thumbnail.offset().top;
 
     const height = thumbnail.height();  
     const resultPagination = Math.floor(offsetTop - sliderBodyOffsetTop + (height / 2) - 15 );
   
     $(".section-slogan .slide-pagination-area").css("top", `${resultPagination}px`);
-    
 
   } else {
     $(".section-slogan .slide-pagination-area").removeAttr("style");
@@ -63,7 +57,6 @@ const _whatWeDo = {
     _whatWeDo.tab();
     _whatWeDo.techService();
     _whatWeDo.startupConsulting();
-
   },
   reset() {
     $(".btn_techService").show();
@@ -73,7 +66,6 @@ const _whatWeDo = {
     $(".what-panel2-2").hide();
 
     $(".what-panel").scrollTop(0)
-
   },
   tab() {
     $("[fn-tabs='whatwedo'] li a").on("click", function(e) {
@@ -98,9 +90,7 @@ const _whatWeDo = {
       panel.fadeIn();
 
       _whatWeDo.reset();
-
     });
-
   },
   techService() {
     $(".btn_techService").on("click", function(e) {
@@ -269,8 +259,6 @@ const setPartnersSlide = function() {
     }
   });
 
-
-
   $(".btn_clients").on("click", function(e) {
     e.preventDefault();
     partnersSlide.slick('slickGoTo', 1);
@@ -289,6 +277,5 @@ const setPartnersSlide = function() {
     const idx = tabs.index(tab);
 
     partnersSlide.slick('slickGoTo', idx);
-
   })
 }

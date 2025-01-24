@@ -5,6 +5,7 @@
   .section-slogan .visual-slider-dots { padding: 38px 0 0; }
 }
 
+
 @media only screen and (max-width:1600px) {
   :root {
     --pad: 6%;
@@ -29,7 +30,6 @@
 
 
 @media only screen and (max-width:1200px) {
-
   .ttl-area .ttl { font-size: 60px; }
   .ttl-area .ttl.ttl-l { font-size: 60px; }
 
@@ -42,24 +42,17 @@
   .section-members .section-inner { padding-left: var(--pad); padding-right: var(--pad); }
 
   .section-partners .logo-area { flex: 1 1 30%; }
-
 }
 
 
-
 @media only screen and (max-width:1024px) {
-
   :root {
     --pad: 100px;
   }
 
-  body {
-    font-size: 1.3rem;
-  }
+  body { font-size: 1.3rem; }
 
-  body,dd,dl,dt,ul,ol,li,p,fieldset,form,input,textarea,select,button,table,legend,th,td,h1,h2,h3,h4,h5,h6 {
-    letter-spacing: -0.037em;
-  }
+  body,dd,dl,dt,ul,ol,li,p,fieldset,form,input,textarea,select,button,table,legend,th,td,h1,h2,h3,h4,h5,h6 { letter-spacing: -0.037em; }
 
   .br_pc,
   .img_pc,
@@ -78,7 +71,6 @@
   .ttl-area .desc { font-size: 14px; }
   .ttl-area .desc-l { font-size: 18px; }
 
-
   #header h1,
   #header .utils { top: 45px; }
 
@@ -92,13 +84,9 @@
   #aside .aside-nav ul { align-items: flex-start; padding-top: 50px; gap: 60px; }
   #aside .aside-nav ul li a { font-size: 28px; }
 
-
-
   /* aside open */
   .aside-open #header #aside_button.active::before,
   .aside-open #header #aside_button.active::after { background: #fff; }
-
-
 
   /* popup */
   #popup .popup_wrap { width: 312px; max-width: calc(100% - 48px); }
@@ -107,15 +95,13 @@
   #popup .btn_close { top: -26px; width: 16px; height: 16px; }
   #popup .dimmed { background: rgba(0,0,0, 0.2); }
 
-
-
+  /* fullpage */
   #fullpage .section,
   #fullpage .fp-overflow,
   .section-inner { height: auto; }
   .section-inner.v-center { display: inherit; align-items: inherit; padding-top: 0; }
 
   #fullpage .section { padding-top: 120px; padding-bottom: 60px; }
-
   
   /* slogan */
   #fullpage .section-slogan { padding-bottom: 0; }
@@ -135,8 +121,6 @@
   .section-slogan .slide-pagination-area .slide-prev { position: absolute; left: 10px; top: 0; }
   .section-slogan .slide-pagination-area .slide-next { position: absolute; right: 10px; top: 0; }
  
-  
-  
   /* what we do */
   .section-what { padding-bottom: 50px; }
   .section-what .what-contents { display: block; padding-top: 46px; }
@@ -145,12 +129,10 @@
   .section-what .what-tabs li.active a { background: #ededed; }
   .section-what .what-panels { display: none; }
 
-
   /* members */
   .section-members .ttl-area .desc { padding-top: 20px; padding-left: 0; }
   .section-members .ttl-area .desc.desc-l { padding-top: 46px; padding-left: 0; }
   .section-members .members-list { flex-direction: column; align-items: center; gap: 50px; padding-top: 50px; }
-
 
   /* partners */
   #fullpage .section-partners { padding-bottom: 0; }
@@ -169,8 +151,6 @@
   .section-partners .clients_bg { margin-top: 30px; aspect-ratio: 6 / 7; }
   .section-partners .slide-pagination-area { display: none; }
 
-
-
   /* contact */
   #fullpage .section-contact { padding-bottom: 0; background: #fff; }
   .section-contact .section-inner { padding-left: 0; padding-right: 0; }
@@ -178,16 +158,12 @@
   .section-contact .ttl-area { max-width: 100%; padding-left: var(--pad); padding-right: var(--pad); }
   .section-contact .content-area { max-width: 100%; background: #eaeaea; padding: 72px var(--pad) 76px; margin-top: 46px; }
 
-
   /* footer */
   #fullpage .section-footer { padding: 0; }
-
-
 
   /* sub - member */
   .members-head { display: block; }
   .members-slides-wrap .btn_back { width: 40px; height: 40px; background-size: 24px; }
-
   .members-slider { margin-top: 40px; }
   .members-slide-inner { height: auto; flex-direction: column; }
   .members-slide-inner .photo { flex: 1 1 100%; width: 100%; aspect-ratio: 5 / 6; }
@@ -207,14 +183,11 @@
   .members-slides-wrap .slide-pagination-area .slide-prev { position: absolute; left: 10px; top: 0; filter: brightness(0.6); }
   .members-slides-wrap .slide-pagination-area .slide-next { position: absolute; right: 10px; top: 0; filter: brightness(0.6); }
 
-
-  /* contact */
+  /* sub - contact */
   .section-contact .content-area dt { font-size: 18px; }
   .section-contact .content-area dd { padding-top: 10px; }
   .section-contact .content-area dd + dt { padding-top: 50px; }
-
 }
-
 
 
 @media only screen and (max-width:768px) {
@@ -225,28 +198,4 @@
   #header h1 a { width: 100px; }
 
   .members-slides-wrap { padding-top: 100px; }
-
-}
-
-
-
-@media only screen and (max-width:480px) {
-}
-
-
-
-@media only screen and (max-width:360px) {
-
-}
-
-
-
-@media only screen and (max-width:320px) {
-  
-}
-
-
-
-@media only screen and (max-width:280px) {
-  
 }

@@ -1,3 +1,8 @@
+$(()=>{
+  _popup.init();
+})
+
+
 const _popup = {
   init() {
     _popup.open();
@@ -14,7 +19,6 @@ const _popup = {
         $("html, body").addClass("no-scroll");
       }, 100);
     }
-
   },
   close() {
     const today = new Date().toISOString().split('T')[0];
@@ -35,8 +39,3 @@ const _popup = {
     })
   }
 }
-
-
-$(()=>{
-  _popup.init();
-})

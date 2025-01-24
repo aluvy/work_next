@@ -21,14 +21,12 @@
   <script src="assets/libs/slick-1.8.0/slick-1.8.0.min.js"></script>
 
   <script type="module" src="component/header-component.js" defer></script>
+  <script type="module" src="component/slickpaging-component.js" defer></script>
   <script type="module" src="component/popup-component.js" defer></script>
   <script type="module" src="component/scrolldown-component.js" defer></script>
-
   <script src="assets/js/front.js"></script>
   <script src="assets/js/index.js"></script>
-
   <link rel="stylesheet" href="assets/css/style.css">
-
 </head>
 <body>
   <div id="wrap">
@@ -120,14 +118,7 @@
 
             <div class="visual-slider-dots"></div>
 
-            <div class="slide-pagination-area">
-              <button type="button" class="slide-arrow slide-prev"></button>
-              <div class="slide-pagination">
-                <span class="current">0</span>
-                <span class="total">0</span>
-              </div>
-              <button type="button" class="slide-arrow slide-next"></button>
-            </div>
+            <slickpaging-component></slickpaging-component>
 
           </div>
 
@@ -399,14 +390,7 @@
             </div>
           </div>
 
-          <div class="slide-pagination-area">
-            <button type="button" class="slide-arrow slide-prev"></button>
-            <div class="slide-pagination">
-              <span class="current">0</span>
-              <span class="total">0</span>
-            </div>
-            <button type="button" class="slide-arrow slide-next"></button>
-          </div>
+          <slickpaging-component></slickpaging-component>
 
         </div>
       </div>
@@ -468,6 +452,6 @@
 
   <popup-component></popup-component>
   <script src="assets/js/popup.js"></script>
-
+  
 </body>
 </html>
