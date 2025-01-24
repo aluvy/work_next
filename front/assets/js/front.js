@@ -68,7 +68,7 @@ const _aside = {
     body.addClass("aside-open");
 
     try {
-      myFullpage.setAllowScrolling(false); // 스크롤 막기
+      myFullpage.setAllowScrolling(false);    // 스크롤 막기
       myFullpage.setKeyboardScrolling(false); // 키보드로 스크롤 비활성화
     } catch(e) {
       // console.log(e);
@@ -107,17 +107,12 @@ const _aside = {
       _aside.close();
 
       if( isMobileSize() || isSmallHeight() ) {
-
-        
         const el = $(`a[name=slide${idx}]`);
-
-        console.log(idx);
         scrollMoveTo(el);
         
       } else {
 
         if( location.href.includes('index') ) {
-
           setTimeout(()=> myFullpage.moveTo(idx), 400);
         } else {
           window.location.href = `index.html#slide${idx}`;
@@ -144,13 +139,7 @@ const _front = {
     scrollDown.off("click").on("click", function() {
 
       if( isMobileSize() || isSmallHeight() ) {
-
-        // let idx = location.hash;
-        // idx = idx == '' ? 0 : idx.replace("#slide", '');
-        // idx = idx * 1 + 1;
-
-        // const element = $(`a[name='slide${idx}']`);
-        // scrollMoveTo(element);
+        
         const height = window.innerHeight;
         $('html, body').stop().animate( { scrollTop : scrollY + height } );
 
